@@ -7,19 +7,16 @@
         </div>
     </div>
 </header>
-<div class="container custom-container-2">
+<div class="card container custom-container-2">
     <!-- Show it when there is no employee -->
     <div class="no-data text-center" *ngIf="Employee.length == 0">
       <p>There is no employee added yet!</p>
-      <!--<button class="btn btn-outline-primary" routerLink="/create-employee">
-        Add Employee
-      </button>-->
     </div>
     <!-- Employees list table, it hides when there is no employee -->
     <div *ngIf="Employee.length !== 0">
       <h3 class="mb-3 text-center">Employees List</h3>
       <div class="col-md-12">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped">
           <thead>
             <tr>
               <th scope="col">Id</th>
