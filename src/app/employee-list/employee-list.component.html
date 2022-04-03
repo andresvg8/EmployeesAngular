@@ -16,8 +16,10 @@
               <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Salary</th>
+              <th scope="col">Annual Salary</th>
               <th scope="col">Age</th>
               <th scope="col">Profile image URL</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -25,11 +27,11 @@
               <td>{{ employee.id }}</td>
               <td>{{ employee.employee_name }}</td>
               <td>{{ employee.employee_salary }}</td>
+              <td>{{ employee.employee_annual_salary }}</td>
               <td>{{ employee.employee_age }}</td>
               <td>{{ employee.profile_image }}</td>
               <td>
-                <span class="edit" routerLink="/{{ employee.id }}">Edit</span>
-                <!--<span class="delete" (click)="deleteEmployee(employee.id)">Delete</span>-->
+                <!--<span class="edit" routerLink="/employee-edit/{{ employee.id }}">View</span>-->
               </td>
             </tr>
           </tbody>

@@ -21,41 +21,15 @@ export class RestApiService {
     }),
   };
   // HttpClient API get() method => Fetch employees list
-  getEmployees(): Observable<Employee> {
+  getEmployees(): Observable<Employee[]> {
     return this.http
-      .get<Employee>(this.apiURL + '/')
+      .get<Employee[]>(this.apiURL+'')
       .pipe(retry(1), catchError(this.handleError));
   }
   // HttpClient API get() method => Fetch employee
   getEmployee(id: any): Observable<Employee> {
     return this.http
       .get<Employee>(this.apiURL + '/employees/' + id)
-      .pipe(retry(1), catchError(this.handleError));
-  }
-  // HttpClient API post() method => Create employee
-  createEmployee(employee: any): Observable<Employee> {
-    return this.http
-      .post<Employee>(
-        this.apiURL + '/employees',
-        JSON.stringify(employee),
-        this.httpOptions
-      )
-      .pipe(retry(1), catchError(this.handleError));
-  }
-  // HttpClient API put() method => Update employee
-  updateEmployee(id: any, employee: any): Observable<Employee> {
-    return this.http
-      .put<Employee>(
-        this.apiURL + '/employees/' + id,
-        JSON.stringify(employee),
-        this.httpOptions
-      )
-      .pipe(retry(1), catchError(this.handleError));
-  }
-  // HttpClient API delete() method => Delete employee
-  deleteEmployee(id: any) {
-    return this.http
-      .delete<Employee>(this.apiURL + '/employees/' + id, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
   // Error handling
